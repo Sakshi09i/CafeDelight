@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-gradient-to-br from-cream via-white to-coffee-200 text-charcoal font-body antialiased min-h-screen;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-rosevale text-white px-4 py-2 rounded-md hover:bg-mango transition-colors;
+  }
+  .container-px {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur border border-white/60 shadow-lg;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-coffee-200 bg-white px-4 py-3 text-coffee-900 placeholder:text-coffee-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-rosevale/60 transition;
+  }
+}

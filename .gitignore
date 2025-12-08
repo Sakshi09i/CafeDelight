@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Optional: package lock files
+# package-lock.json
+# yarn.lock
