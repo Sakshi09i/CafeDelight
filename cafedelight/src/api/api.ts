@@ -57,3 +57,19 @@ export async function apiGet(url: string) {
     throw new Error(err.message || 'Network error')
   }
 }
+
+export async function apiGetAdminOrders() {
+  return apiGet('/api/admin/orders')
+}
+
+export async function apiUpdateOrderStatus(
+  orderId: string,
+  status: 'PENDING' | 'PREPARING' | 'READY' | 'SERVED'
+) {
+  return apiPost(`/api/admin/orders/${orderId}/status`, { status })
+}
+
+
+export async function apiGetAdminMetrics() {
+  return apiGet('/api/admin/metrics')
+}

@@ -6,25 +6,33 @@ import { useNavigate } from 'react-router-dom'
 export function OrdersPage() {
   const { token } = useAuth()
   const navigate = useNavigate()
+
   const [orders, setOrders] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const res = await apiGet('/api/orders/my')
-        setOrders(res)
-      } catch (err) {
-        console.error(err)
-      } finally {
-        setLoading(false)
-      }
+  const fetchOrders = async () => {
+    try {
+      const res = await apiGet('/api/orders/my')
+      setOrders(res)
+    } catch (err) {
+      console.error('Failed to fetch orders', err)
+    } finally {
+      setLoading(false)
     }
+  }
 
-    if (token) fetchOrders()
+  useEffect(() => {
+    if (!token) return
+
+    fetchOrders()
+
+    // 🔁 LIVE UPDATE every 5 seconds
+    const interval = setInterval(fetchOrders, 5000)
+
+    return () => clearInterval(interval)
   }, [token])
 
-  if (loading) return <p className='p-6'>Loading orders...</p>
+  if (loading) return <p className='p-6'>Loading orders…</p>
 
   if (!orders.length) {
     return (
@@ -44,7 +52,7 @@ export function OrdersPage() {
           className='bg-white rounded-xl border p-4 cursor-pointer hover:shadow'
           onClick={() => navigate(`/status?orderId=${order._id}`)}
         >
-          <div className='flex justify-between'>
+          <div className='flex justify-between items-center'>
             <div>
               <p className='font-semibold'>Order #{order._id.slice(-6)}</p>
               <p className='text-sm text-coffee-600'>
@@ -52,12 +60,23 @@ export function OrdersPage() {
               </p>
             </div>
 
-            <span className='px-3 py-1 rounded-full text-sm bg-coffee-100'>
+            {/* STATUS BADGE */}
+            <span
+              className={`px-3 py-1 rounded-full text-sm font-medium ${
+                order.status === 'PENDING'
+                  ? 'bg-yellow-100 text-yellow-700'
+                  : order.status === 'PREPARING'
+                  ? 'bg-blue-100 text-blue-700'
+                  : order.status === 'READY'
+                  ? 'bg-green-100 text-green-700'
+                  : 'bg-gray-200 text-gray-700'
+              }`}
+            >
               {order.status}
             </span>
           </div>
 
-          <div className='mt-3 text-sm'>
+          <div className='mt-3 text-sm text-coffee-700'>
             Items: {order.items.length} <br />
             Total: ₹{order.totalAmount} <br />
             Payment: {order.paymentMethod}
