@@ -133,7 +133,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Desserts',
     price: 130,
     image:
-      'https://images.unsplash.com/photo-1606313564200-e75d5e30476e?q=80&w=1200&auto=format&fit=crop',
+      'https://media.istockphoto.com/id/1279622899/photo/chocolate-cakes-brownies-pastries-dessert-on-black-ceramic-plate-with-nuts-topping.webp?a=1&b=1&s=612x612&w=0&k=20&c=_ho8DMovoJBgese7RzHRCZk722drl2sxxfwNugh7J60=',
     rating: 4.8,
     description: 'Fudgy and decadent treat.',
     badges: ['Best Seller'],
@@ -144,7 +144,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Desserts',
     price: 220,
     image:
-      'https://images.unsplash.com/photo-1511911063855-2bf39afa5b2c?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2hlZXNlY2FrZXxlbnwwfHwwfHx8MA%3D%3D',
     rating: 4.7,
     description: 'Classic New York–style cheesecake.',
   },
@@ -154,7 +154,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Desserts',
     price: 240,
     image:
-      'https://images.unsplash.com/photo-1541976076758-347942db1970?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1763161693002-de3643c9cf2a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEd1bGFiJTIwSmFtdW4lMjBDaGVlc2VjYWtlfGVufDB8fDB8fHww',
     rating: 4.9,
     description: 'Fusion of Indian dessert & cheesecake.',
     badges: ['Best Seller'],
@@ -165,7 +165,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Desserts',
     price: 230,
     image:
-      'https://images.unsplash.com/photo-1602743059441-c9e1e4d8a6b8?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1639744211487-b27e3551b07c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VGlyYW1pc3V8ZW58MHx8MHx8fDA%3D',
     rating: 4.6,
     description: 'Classic Italian layered dessert.',
   },
@@ -190,7 +190,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Specials',
     price: 210,
     image:
-      'https://images.archanaskitchen.com/archanaskitchen/recipe/kesar-pista-falooda-recipe/1.jpg',
+      'https://media.istockphoto.com/id/657090480/photo/rajwari-or-rajwadi-sweet-kesar-badam-pista-kulfi-or-ice-cream-candy.webp?a=1&b=1&s=612x612&w=0&k=20&c=W8ZZL31ufg9lG_GGfDbqKa2UqV31Vlt5DBaR3dsnGUM=',
     rating: 4.7,
     description: 'Royal dessert with saffron and pistachio.',
     badges: ['New', "Chef's Choice"],

@@ -1,5 +1,12 @@
+// src/utils/auth.ts
+
 export function getToken() {
   return localStorage.getItem('token')
+}
+
+export function getUser() {
+  const user = localStorage.getItem('user')
+  return user ? JSON.parse(user) : null
 }
 
 export function isLoggedIn() {
@@ -8,8 +15,8 @@ export function isLoggedIn() {
 
 export function logout() {
   localStorage.removeItem('token')
+  localStorage.removeItem('user')
 
-  // SPA safe redirect
-  window.history.pushState({}, '', '/login')
-  window.location.reload()
+  // clean redirect (SPA-friendly)
+  window.location.href = '/login'
 }

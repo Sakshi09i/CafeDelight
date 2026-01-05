@@ -32,7 +32,7 @@ export function HomePage() {
         title: 'Happy Hours',
         desc: '3–6 PM: Buy 1 Get 1 on Chai',
         color: 'from-coffee-100 to-coffee-300',
-        img: 'https://images.unsplash.com/photo-1542444459-db67a4bd4b88?q=80&w=1200&auto=format&fit=crop',
+        img: 'https://images.unsplash.com/photo-1514431294868-32276c28e8e5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGhhcHB5JTIwaG91ciUyMGZvciUyMGNvZmZlfGVufDB8fDB8fHww',
       },
       {
         title: 'Student Deal',
@@ -167,7 +167,7 @@ export function HomePage() {
             },
             {
               name: 'Brownie',
-              img: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476e?q=80&w=1200&auto=format&fit=crop',
+              img: 'https://images.unsplash.com/photo-1636743715220-d8f8dd900b87?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QnJvd25pZXxlbnwwfHwwfHx8MA%3D%3D',
               price: 130,
             },
           ].map((card) => (
@@ -279,10 +279,11 @@ export function HomePage() {
           <div className='bg-white rounded-xl border border-coffee-100 p-5'>
             <div className='font-semibold mb-2'>For Seniors</div>
             <p className='text-coffee-700 mb-3'>
-              Warm service, quiet mornings, and light bites with tea.
+              Warm, personalized customer service ensures a delightful
+              experience from start to finish.
             </p>
             <img
-              src='https://images.unsplash.com/photo-1603635835343-3ad0709b71b8?q=80&w=1200&auto=format&fit=crop'
+              src='https://media.istockphoto.com/id/2201055188/photo/hands-nurse-and-tea-at-breakfast-in-home-with-help-support-and-care-for-patient-in-recovery.jpg?s=612x612&w=0&k=20&c=YiBlBxnVNBQok6VZsIwKvjC5R2hKoVE1NnVOT2LrNww='
               alt='Senior'
               className='rounded-md object-cover h-40 w-full'
             />
@@ -292,5 +293,3 @@ export function HomePage() {
     </div>
   )
 }
-
-

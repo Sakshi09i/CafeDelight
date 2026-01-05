@@ -12,32 +12,70 @@ import { CheckoutPage } from './pages/Checkout'
 import { OrderStatusPage } from './pages/OrderStatus'
 import { LoginPage } from './pages/Login'
 import { RegisterPage } from './pages/RegisterPage'
+import { ForgotPasswordPage } from './pages/ForgotPassword'
+import { ResetPasswordPage } from './pages/ResetPassword'
+import { ProfilePage } from './pages/Profile'
+import { OrdersPage } from './pages/Orders'
+
+import { ProtectedRoute } from './routes/ProtectedRoute'
+import { UnauthorizedPage } from './pages/Unauthorized'
+
+import { AdminLayout } from './pages/admin/AdminLayout'
+import { AdminDashboard } from './pages/admin/AdminDashboard'
+import { AdminOrders } from './pages/admin/AdminOrders'
 
 const router = createBrowserRouter([
   {
     path: '/',
     children: [
+      // 🌸 PUBLIC
       { index: true, element: <WelcomePage /> },
       { path: 'login', element: <LoginPage /> },
       { path: 'register', element: <RegisterPage /> },
+      { path: 'forgot-password', element: <ForgotPasswordPage /> },
+      { path: 'reset-password/:token', element: <ResetPasswordPage /> },
+      { path: 'unauthorized', element: <UnauthorizedPage /> }, // ✅ HERE
+
+      // 🔐 USER ROUTES
       {
-        element: <AppLayout />,
+        element: <ProtectedRoute allowedRoles={['USER']} />,
         children: [
-          { path: 'home', element: <HomePage /> },
-          { path: 'menu', element: <MenuPage /> },
-          { path: 'cart', element: <CartPage /> },
-          { path: 'checkout', element: <CheckoutPage /> },
-          { path: 'status', element: <OrderStatusPage /> },
+          {
+            element: <AppLayout />,
+            children: [
+              { path: 'home', element: <HomePage /> },
+              { path: 'menu', element: <MenuPage /> },
+              { path: 'cart', element: <CartPage /> },
+              { path: 'checkout', element: <CheckoutPage /> },
+              { path: 'status', element: <OrderStatusPage /> },
+              { path: 'orders', element: <OrdersPage /> },
+              { path: 'profile', element: <ProfilePage /> },
+            ],
+          },
+        ],
+      },
+
+      // 🔒 ADMIN ROUTES
+      {
+        path: 'admin',
+        element: <ProtectedRoute allowedRoles={['ADMIN']} />,
+        children: [
+          {
+            element: <AdminLayout />,
+            children: [
+              { path: 'dashboard', element: <AdminDashboard /> },
+              { path: 'orders', element: <AdminOrders /> },
+            ],
+          },
         ],
       },
     ],
   },
 ])
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
 )
-
-
